@@ -1,8 +1,9 @@
 [DEFAULT]
 rra_filename: /var/rrdtool/wan_traffic.rra
+rra_filename_uptime: /var/rrdtool/wan_uptime.rra
 graph_height: 300
 graph_width: 500
-graph_basedir: /var/www/htdocs/pics
+graph_basedir: /var/www/html/pics
 # graph type for up/downstream: LINEx (where x = line width), AREA
 # more information about plotting
 # https://oss.oetiker.ch/rrdtool/doc/rrdgraph_graph.en.html
@@ -38,4 +39,30 @@ interval: 2592000
 title: Traffic of last month
 # filename of plot
 filename: %(graph_basedir)s/traffic_1m.png
+
+[day_uptime]
+# interval in seconds to be plotted
+interval: 86400
+# title of plot
+title: Uptime of last day
+# filename of plot
+filename: %(graph_basedir)s/uptime_1d.png
+
+[week_uptime]
+# interval in seconds to be plotted
+interval: 604800
+# title of plot
+title: Uptime of last week
+# filename of plot
+filename: %(graph_basedir)s/uptime_1w.png
+
+[month_uptime]
+# interval in seconds to be plotted
+interval: 2592000
+# title of plot
+title: Uptime of last month
+# filename of plot
+filename: %(graph_basedir)s/uptime_1m.png
+
+
 
